@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pick a Song</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #1a1a2e;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      margin-bottom: 40px;
+      font-size: 1.8rem;
+      color: #a8b2d8;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 30px;
+    }
+
+    .song-btn {
+      background: rgba(255,255,255,0.07);
+      border: 2px solid rgba(255,255,255,0.2);
+      border-radius: 16px;
+      color: #fff;
+      cursor: pointer;
+      padding: 30px 40px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      transition: all 0.2s ease;
+      min-width: 200px;
+    }
+
+    .song-btn:hover {
+      background: rgba(233,69,96,0.2);
+      border-color: #e94560;
+      transform: translateY(-4px);
+    }
+
+    .song-btn.selected {
+      background: rgba(233,69,96,0.3);
+      border-color: #e94560;
+    }
+
+    .artist {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: #a8b2d8;
+      margin-top: 6px;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 1.1rem;
+      color: #e94560;
+      min-height: 28px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Which song do you prefer?</h1>
+
+  <div class="buttons">
+    <button class="song-btn" onclick="choose(this)">
+      Bohemian Rhapsody
+      <span class="artist">Queen</span>
+    </button>
+
+    <button class="song-btn" onclick="choose(this)">
+      Hotel California
+      <span class="artist">Eagles</span>
+    </button>
+  </div>
+
+  <p id="result"></p>
+
+  <script>
+    function choose(btn) {
+      document.querySelectorAll('.song-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById('result').textContent = 'You picked: ' + btn.childNodes[0].textContent.trim();
+    }
+  </script>
+
+</body>
+</html>

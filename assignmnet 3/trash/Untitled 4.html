@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <p>Pick one:</p>
+
+  <input type="radio" name="song" value="Option A"> Taylor Swift <br>
+  <input type="radio" name="song" value="Option B"> Queen <br><br>
+
+  <button onclick="showPick()">Submit</button>
+
+  <p id="result"></p>
+
+  <script>
+    function showPick() {
+      const pick = document.querySelector('input[name="choice"]:checked');
+      document.getElementById('result').textContent = 'You picked: ' + pick.value;
+    }
+  </script>
+
+</body>
+</html>

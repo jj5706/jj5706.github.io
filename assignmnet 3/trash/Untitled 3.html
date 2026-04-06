@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pick a Song</title>
+</head>
+<body>
+
+  <h2 id="question">Which song do you prefer?</h2>
+
+  <div id="options"></div><br>
+
+  <button onclick="next()">Next</button>
+
+  <script>
+    const pages = [
+      { a: "Bohemian Rhapsody - Queen",        b: "Hotel California - Eagles" },
+      { a: "Smells Like Teen Spirit - Nirvana", b: "Billie Jean - Michael Jackson" },
+      { a: "Rolling in the Deep - Adele",       b: "Lose Yourself - Eminem" }
+    ];
+
+    let current = 0;
+
+    function loadPage() {
+      const p = pages[current];
+      document.getElementById('options').innerHTML = `
+        <input type="radio" name="song" id="songA" value="${p.a}">
+        <label for="songA">${p.a}</label><br><br>
+        <input type="radio" name="song" id="songB" value="${p.b}">
+        <label for="songB">${p.b}</label>
+      `;
+    }
+
+    function next() {
+      const pick = document.querySelector('input[name="song"]:checked');
+      if (!pick) { alert('Please pick a song first!'); return; }
+      current++;
+      if (current < pages.length) {
+        loadPage();
+      } else {
+        document.body.innerHTML = '<h2>Done! Thanks for picking.</h2>';
+      }
+    }
+
+    loadPage();
+  </script>
+
+</body>
+</html>
