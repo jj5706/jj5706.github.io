@@ -3,7 +3,7 @@
 <head>
   <title>Art Song Game </title>
 </head>
-#body {
+#div1 {
   border-radius: 25px;
   background-color: #04AA6D;
   padding: 20px; 
@@ -13,6 +13,7 @@
 <body style="font-family:'Courier New'">
     <center> 
 
+      <div id="div1">
   <h2>Welcome to the song quiz website for the Princeton Art Museum!</h2>
   <h4>This website will allow you to choose between songs to determine the gallery that best fits your vibe for today. Among the many galleries at the museum, each carries a different vibe and your choice of song can determine which one to pick. There are no wrong answers so enjoy!</h4>
 
@@ -33,7 +34,7 @@
   <source src="texas-hold-em.mp3" type="audio/mpeg">
 </audio>
   <button onclick="next()">Next</button>
-
+      </div>
   <script>
    function next() {
     const pick = document.querySelector('input[name="song"]:checked');
