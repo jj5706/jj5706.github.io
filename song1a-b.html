@@ -31,15 +31,12 @@
   <script>
     function next() {
       const pick = document.querySelector('input[name="song"]:checked');
-      if (!pick) { alert('Please pick a song first!'); return; }
-      alert('You chose: ' + pick.value);
-    const pick = document.querySelector('input[name="song"]:checked');
-    if (!pick) { alert('Please pick a song first!'); return; }
+     
 
     if (pick.value === "Bohemian Rhapsody") {
       window.location.href = "euroart.html";
     } else {
-      window.location.href = "photoandworks.html";
+      window.location.href = "photog.html";
     }
   }
 </script>
