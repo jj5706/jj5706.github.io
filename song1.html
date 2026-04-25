@@ -3,13 +3,18 @@
 <head>
   <title>Art Song Game </title>
 </head>
-
 <body style="font-family:'Courier New'">
     <center> 
+<style>
+div {
+font-size: 25px;
+width: 850px;
+}
 
-      <div id="div1">
-  <h2>Welcome to the song quiz website for the Princeton Art Museum!</h2>
-  <h4>This website will allow you to choose between songs to determine the gallery that best fits your vibe for today. Among the many galleries at the museum, each carries a different vibe and your choice of song can determine which one to pick. There are no wrong answers so enjoy!</h4>
+</style>
+<div>
+  <h2>Which Exhibit Are You? Welcome to exhibit matching website for the Princeton Art Museum!</h2>
+  <h4>Make your pick below:</h4>
 
 
   <input type="radio" name="song" id="songA" value="song1">
@@ -27,9 +32,11 @@
 <audio controls>
   <source src="texas-hold-em.mp3" type="audio/mpeg">
 </audio>
+<br>
+</br>
   <button onclick="next()">Next</button>
+
   <script>
- <br></br>
    function next() {
     const pick = document.querySelector('input[name="song"]:checked');
 
@@ -41,9 +48,8 @@
     }
   }
 </script>
-    </center> 
-<p><pre><center>
- (^.^)(^.^)(^.^)(^.^)(^.^)(^.^)(^.^)(^.^)(^.^)(^.^)(^.^)(^.^)(^.^)(^.^)(^.^)(^.^)(^.^)(^.^)(^.^)(^.^)(^.^)
-</center></pre></p>
+</div>
+
+</center>
 </body>
 </html>
